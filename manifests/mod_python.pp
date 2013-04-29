@@ -24,10 +24,7 @@ class python::mod_python {
     }
   }
 
-  apache::module { "python":
-    ensure  => present,
-    require => Package["mod_python"],
-  }
+  include apache::mod::python 
 
   case $operatingsystem {
 
